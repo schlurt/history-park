@@ -1,20 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>DIVIDED NATION: THE CIVIL WAR EXPERIENCE</title>
-    <link rel="stylesheet" href="styles.css">
+<title>Divided Nation Theme Park</title>
+
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #d8c3a5;
+text-align: center;
+}
+
+h1 {
+color: #4b2e1e;
+}
+
+#park {
+width: 800px;
+height: 600px;
+margin: auto;
+background-color: #8fbf7f;
+border: 5px solid #333;
+position: relative;
+}
+
+/* Clickable areas */
+.area {
+position: absolute;
+padding: 20px;
+color: white;
+font-weight: bold;
+cursor: pointer;
+border-radius: 15px;
+}
+
+.area:hover {
+transform: scale(1.1);
+}
+
+/* Sections */
+.north {
+background:#4169e1;
+left:50px;
+top:80px;
+}
+
+.gettysburg {
+background:#8b0000;
+left:300px;
+top:220px;
+}
+
+.south {
+background:#555;
+right:50px;
+top:80px;
+}
+
+.camp {
+background:#8b4513;
+left:80px;
+bottom:70px;
+}
+
+.rebuild {
+background:#228b22;
+right:80px;
+bottom:70px;
+}
+
+#info {
+width:700px;
+margin:20px auto;
+background:white;
+padding:20px;
+border-radius:15px;
+display:none;
+}
+</style>
+
 </head>
+
+
 <body>
-    <h1>Step into the past. Choose your side. Discover the story.</h1>
-    <p>lorem ipsum dil amet, yk</p>
-    <li>
-        <ul><a href="South.html">The South</a></ul>
-        <ul><a href="Slaves.html">The life of slavery</a></ul>
-        <ul><a href="North.html">The North</ul>
-        <ul><a href="Battlefields.html">Major Battlefields</ul>
-        <ul><a href="Gettysburg.html">Gettysburg</ul>
-    </li>
+
+<h1>⚔️ Divided Nation: Civil War Theme Park ⚔️</h1>
+
+<div id="park">
+
+<div class="area north" onclick="showInfo('north')">
+North Area
+</div>
+
+<div class="area gettysburg" onclick="showInfo('gettysburg')">
+Gettysburg
+</div>
+
+<div class="area south" onclick="showInfo('south')">
+South Area
+</div>
+
+<div class="area camp" onclick="showInfo('camp')">
+Camp Life
+</div>
+
+<div class="area rebuild" onclick="showInfo('rebuild')">
+Reconstruction
+</div>
+
+</div>
+
+
+<div id="info"></div>
+
+
+<script>
+
+function showInfo(area){
+
+let text="";
+
+if(area=="north"){
+text = `
+<h2>🔵 Union Stronghold</h2>
+<p>
+Visit rides like Union Express Railroad, Gettysburg Thunder Coaster,
+and Lincoln's Leadership Challenge. Learn about Northern industry,
+railroads, and the Union war effort.
+</p>`;
+}
+
+
+if(area=="gettysburg"){
+text = `
+<h2>⚔️ Gettysburg Battlefield</h2>
+<p>
+Experience Gettysburg Thunder Coaster, Pickett's Charge Drop Tower,
+and the 360° Battle Experience. Discover why Gettysburg changed the war.
+</p>`;
+}
+
+
+if(area=="south"){
+text = `
+<h2>⚫ Confederate Crossing</h2>
+<p>
+Explore Rebel Run Coaster, Fort Sumter Siege, and Dixie Railroad Express.
+Learn about Southern battles, camps, and wartime challenges.
+</p>`;
+}
+
+
+if(area=="camp"){
+text = `
+<h2>🏕️ Life in the Camps</h2>
+<p>
+Try Soldier Survival Challenge and learn about the daily lives
+of Civil War soldiers, nurses, and families.
+</p>`;
+}
+
+
+if(area=="rebuild"){
+text = `
+<h2>🔧 Reconstruction</h2>
+<p>
+Discover how America rebuilt after the war through interactive
+experiences about freedom and rebuilding.
+</p>`;
+}
+
+
+document.getElementById("info").innerHTML=text;
+document.getElementById("info").style.display="block";
+
+}
+
+</script>
+
+
 </body>
 </html>
+
+---
+
+Clayton Public School District does not discriminate based on race, color, gender, national origin, sexual orientation, or disability in programs, services, and activities.
