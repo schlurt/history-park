@@ -91,27 +91,27 @@ display:none;
 <div id="park">
 
 <div class="area north" onclick="showInfo('north')">
-North Area
+The South
 </div>
 
 
 <div class="area battles" onclick="showInfo('battles')">
-Major Battles
+Major Battlefields
 </div>
 
 
 <div class="area south" onclick="showInfo('south')">
-South Area
-</div>
-
-
-<div class="area slavery" onclick="showInfo('slavery')">
 Life of Slavery
 </div>
 
 
+<div class="area slavery" onclick="showInfo('slavery')">
+The North
+</div>
+
+
 <div class="area life" onclick="showInfo('life')">
-After the War
+Gettysburg
 </div>
 
 </div>
@@ -131,7 +131,7 @@ let text="";
 
 if(area=="north"){
 text = `
-<h2>🔵 Union Stronghold</h2>
+<h2>🔵 The Union</h2>
 <p>
 Explore the North with rides like Union Express Railroad,
 Gettysburg Thunder Coaster, and Lincoln's Leadership Challenge.
@@ -142,7 +142,7 @@ Learn how industry, railroads, and resources helped the Union.
 
 if(area=="battles"){
 text = `
-<h2>⚔️ Major Battles</h2>
+<h2>⚔️ Major Battlefields</h2>
 <p>
 Experience rides like Gettysburg Thunder Coaster,
 Pickett's Charge Drop Tower, and Battlefield 360.
@@ -154,7 +154,7 @@ how they changed the future of the country.
 
 if(area=="south"){
 text = `
-<h2>⚫ Confederate Crossing</h2>
+<h2>🔴 The Confederacy</h2>
 <p>
 Ride Rebel Run Coaster, Fort Sumter Siege, and Dixie Railroad Express.
 Learn about Southern strategies, military camps, and challenges.
@@ -175,7 +175,7 @@ their struggles, culture, and fight for freedom.
 
 if(area=="life"){
 text = `
-<h2>🔧 After the War</h2>
+<h2>🎩 Gettysburg</h2>
 <p>
 Learn how America changed after the Civil War, including rebuilding,
 new laws, and the challenges of bringing the nation back together.
