@@ -23,7 +23,6 @@ border: 5px solid #333;
 position: relative;
 }
 
-/* Clickable areas */
 .area {
 position: absolute;
 padding: 20px;
@@ -37,14 +36,15 @@ border-radius: 15px;
 transform: scale(1.1);
 }
 
-/* Sections */
+/* Park Sections */
+
 .north {
 background:#4169e1;
 left:50px;
 top:80px;
 }
 
-.gettysburg {
+.battles {
 background:#8b0000;
 left:300px;
 top:220px;
@@ -56,17 +56,18 @@ right:50px;
 top:80px;
 }
 
-.camp {
+.slavery {
 background:#8b4513;
 left:80px;
 bottom:70px;
 }
 
-.rebuild {
+.life {
 background:#228b22;
 right:80px;
 bottom:70px;
 }
+
 
 #info {
 width:700px;
@@ -76,6 +77,7 @@ padding:20px;
 border-radius:15px;
 display:none;
 }
+
 </style>
 
 </head>
@@ -85,32 +87,39 @@ display:none;
 
 <h1>⚔️ Divided Nation: Civil War Theme Park ⚔️</h1>
 
+
 <div id="park">
 
 <div class="area north" onclick="showInfo('north')">
 North Area
 </div>
 
-<div class="area gettysburg" onclick="showInfo('gettysburg')">
-Gettysburg
+
+<div class="area battles" onclick="showInfo('battles')">
+Major Battles
 </div>
+
 
 <div class="area south" onclick="showInfo('south')">
 South Area
 </div>
 
-<div class="area camp" onclick="showInfo('camp')">
-Camp Life
+
+<div class="area slavery" onclick="showInfo('slavery')">
+Life of Slavery
 </div>
 
-<div class="area rebuild" onclick="showInfo('rebuild')">
-Reconstruction
+
+<div class="area life" onclick="showInfo('life')">
+After the War
 </div>
 
 </div>
+
 
 
 <div id="info"></div>
+
 
 
 <script>
@@ -119,23 +128,26 @@ function showInfo(area){
 
 let text="";
 
+
 if(area=="north"){
 text = `
 <h2>🔵 Union Stronghold</h2>
 <p>
-Visit rides like Union Express Railroad, Gettysburg Thunder Coaster,
-and Lincoln's Leadership Challenge. Learn about Northern industry,
-railroads, and the Union war effort.
+Explore the North with rides like Union Express Railroad,
+Gettysburg Thunder Coaster, and Lincoln's Leadership Challenge.
+Learn how industry, railroads, and resources helped the Union.
 </p>`;
 }
 
 
-if(area=="gettysburg"){
+if(area=="battles"){
 text = `
-<h2>⚔️ Gettysburg Battlefield</h2>
+<h2>⚔️ Major Battles</h2>
 <p>
-Experience Gettysburg Thunder Coaster, Pickett's Charge Drop Tower,
-and the 360° Battle Experience. Discover why Gettysburg changed the war.
+Experience rides like Gettysburg Thunder Coaster,
+Pickett's Charge Drop Tower, and Battlefield 360.
+Discover the most important battles of the Civil War and
+how they changed the future of the country.
 </p>`;
 }
 
@@ -144,30 +156,32 @@ if(area=="south"){
 text = `
 <h2>⚫ Confederate Crossing</h2>
 <p>
-Explore Rebel Run Coaster, Fort Sumter Siege, and Dixie Railroad Express.
-Learn about Southern battles, camps, and wartime challenges.
+Ride Rebel Run Coaster, Fort Sumter Siege, and Dixie Railroad Express.
+Learn about Southern strategies, military camps, and challenges.
 </p>`;
 }
 
 
-if(area=="camp"){
+if(area=="slavery"){
 text = `
-<h2>🏕️ Life in the Camps</h2>
+<h2>🌱 Life of Slavery</h2>
 <p>
-Try Soldier Survival Challenge and learn about the daily lives
-of Civil War soldiers, nurses, and families.
+Visit Freedom Kitchen, Underground Railroad Escape, and
+interactive exhibits that explain the experiences of enslaved people,
+their struggles, culture, and fight for freedom.
 </p>`;
 }
 
 
-if(area=="rebuild"){
+if(area=="life"){
 text = `
-<h2>🔧 Reconstruction</h2>
+<h2>🔧 After the War</h2>
 <p>
-Discover how America rebuilt after the war through interactive
-experiences about freedom and rebuilding.
+Learn how America changed after the Civil War, including rebuilding,
+new laws, and the challenges of bringing the nation back together.
 </p>`;
 }
+
 
 
 document.getElementById("info").innerHTML=text;
