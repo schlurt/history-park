@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Divided Nation Theme Park</title>
 
 <style>
+
 body {
 font-family: Arial, sans-serif;
-background-color: #d8c3a5;
-text-align: center;
+background:#d8c3a5;
+text-align:center;
 }
 
 h1 {
-color: #4b2e1e;
+color:#4b2e1e;
 }
 
 #park {
-width: 800px;
-height: 600px;
-margin: auto;
-background-color: #8fbf7f;
-border: 5px solid #333;
-position: relative;
+width:800px;
+height:600px;
+margin:auto;
+background:#8fbf7f;
+border:5px solid black;
+position:relative;
 }
 
+
 .area {
-position: absolute;
-padding: 20px;
-color: white;
-font-weight: bold;
-cursor: pointer;
-border-radius: 15px;
+position:absolute;
+padding:20px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+border-radius:15px;
 }
 
 .area:hover {
-transform: scale(1.1);
+transform:scale(1.1);
 }
 
-/* Park Sections */
 
 .north {
 background:#4169e1;
@@ -62,20 +64,28 @@ left:80px;
 bottom:70px;
 }
 
-.life {
+.after {
 background:#228b22;
 right:80px;
 bottom:70px;
 }
 
 
-#info {
-width:700px;
+
+#menu {
+width:600px;
 margin:20px auto;
 background:white;
-padding:20px;
 border-radius:15px;
+padding:20px;
 display:none;
+text-align:left;
+}
+
+
+li {
+margin:10px;
+font-size:18px;
 }
 
 </style>
@@ -84,87 +94,156 @@ display:none;
 
 
 <body>
-  <h1>⚔️ Divided Nation: Civil War Theme Park ⚔️</h1>
-  <div id="park">
-    <div class="area south" onclick="showInfo('south')">The South</div>
-    <div class="area battles" onclick="showInfo('battles')">Major Battlefields</div>
-    <div class="area slavery" onclick="showInfo('slavery')">Life of Slavery</div>
-    <div class="area south" onclick="showInfo('south')">The North</div>
-    <div class="area life" onclick="showInfo('life')">Gettysburg</div>
-  </div>
-  <div id="info"></div>
+
+
+<h1>⚔️ Divided Nation Civil War Theme Park ⚔️</h1>
+
+
+<div id="park">
+
+
+<div class="area north" onclick="showRides('north')">
+🔵 North Area
+</div>
+
+
+<div class="area battles" onclick="showRides('battles')">
+⚔️ Major Battles
+</div>
+
+
+<div class="area south" onclick="showRides('south')">
+⚫ South Area
+</div>
+
+
+<div class="area slavery" onclick="showRides('slavery')">
+🌱 Life of Slavery
+</div>
+
+
+<div class="area after" onclick="showRides('after')">
+🔧 After the War
+</div>
+
+
+</div>
+
+
+
+<div id="menu"></div>
 
 
 
 <script>
 
-function showInfo(area){
 
-let text="";
-
-
-if(area=="north"){
-text = `
-<h2>🔵 The Union</h2>
-<p>
-Explore the North with rides like Union Express Railroad,
-Gettysburg Thunder Coaster, and Lincoln's Leadership Challenge.
-Learn how industry, railroads, and resources helped the Union.
-</p>`;
-}
+function showRides(section){
 
 
-if(area=="battles"){
-text = `
-<h2>⚔️ Major Battlefields</h2>
-<p>
-Experience rides like Gettysburg Thunder Coaster,
-Pickett's Charge Drop Tower, and Battlefield 360.
-Discover the most important battles of the Civil War and
-how they changed the future of the country.
-</p>`;
-}
+let info="";
 
 
-if(area=="south"){
-text = `
-<h2>🔴 The Confederacy</h2>
-<p>
-Ride Rebel Run Coaster, Fort Sumter Siege, and Dixie Railroad Express.
-Learn about Southern strategies, military camps, and challenges.
-</p>`;
-}
+if(section=="north"){
 
+info=`
+<h2>🔵 North Area Rides</h2>
+<ul>
+<li>🚂 Union Express Railroad - Learn how railroads helped the Union.</li>
 
-if(area=="slavery"){
-text = `
-<h2>🌱 Life of Slavery</h2>
-<p>
-Visit Freedom Kitchen, Underground Railroad Escape, and
-interactive exhibits that explain the experiences of enslaved people,
-their struggles, culture, and fight for freedom.
-</p>`;
-}
+<li>🎢 Gettysburg Thunder Coaster - A coaster about Union victories.</li>
 
-
-if(area=="life"){
-text = `
-<h2>🎩 Gettysburg</h2>
-<p>
-Learn how America changed after the Civil War, including rebuilding,
-new laws, and the challenges of bringing the nation back together.
-</p>`;
+<li>🎩 Lincoln's Leadership Challenge - Make wartime decisions as Lincoln.</li>
+</ul>`;
 }
 
 
 
-document.getElementById("info").innerHTML=text;
-document.getElementById("info").style.display="block";
+if(section=="battles"){
+
+info=`
+<h2>⚔️ Major Battles Rides</h2>
+<ul>
+
+<li>🎢 Gettysburg Thunder Coaster - Experience the famous battle.</li>
+
+<li>💥 Pickett's Charge Drop Tower - Based on the final attack.</li>
+
+<li>🎥 Battlefield 360 Experience - Watch the battle unfold around you.</li>
+
+</ul>`;
+}
+
+
+
+if(section=="south"){
+
+info=`
+<h2>⚫ South Area Rides</h2>
+
+<ul>
+
+<li>🎢 Rebel Run Coaster - Ride through Confederate battle scenes.</li>
+
+<li>🚂 Dixie Railroad Express - Explore Southern railroads.</li>
+
+<li>🌊 Bayou Rapids - River ride through Southern landscapes.</li>
+
+</ul>`;
+}
+
+
+
+if(section=="slavery"){
+
+info=`
+<h2>🌱 Life of Slavery Attractions</h2>
+
+<ul>
+
+<li>🚪 Underground Railroad Escape - Learn about escapes to freedom.</li>
+
+<li>🍽️ Freedom Kitchen - Explore African American food traditions.</li>
+
+<li>🎭 Voices of Freedom Theater - Hear stories of enslaved people.</li>
+
+</ul>`;
+}
+
+
+
+if(section=="after"){
+
+info=`
+<h2>🔧 After the War Attractions</h2>
+
+<ul>
+
+<li>🏗️ Reconstruction Builder - Rebuild towns after the war.</li>
+
+<li>📜 Freedom Walk - Learn about new laws and rights.</li>
+
+<li>🗳️ Voting Rights Challenge - Explore changes after the war.</li>
+
+</ul>`;
+}
+
+
+
+document.getElementById("menu").innerHTML=info;
+
+document.getElementById("menu").style.display="block";
+
 
 }
+
 
 </script>
 
 
 </body>
 </html>
+
+---
+
+Clayton Public School District does not discriminate based on race, color, gender, national origin, sexual orientation, or disability in programs, services, and activities.
